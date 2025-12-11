@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepali Khaja — Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #111;
+            color: #fff;
+        }
+
+        /* NAVIGATION */
+        .nav {
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 40px; /* INCREASED SIZE */
+            background: #ff5c2e;
+            padding: 12px 22px;
+            border-radius: 16px;
+        }
+
+        .nav-links a {
+            margin-right: 22px;
+            color: #eee;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #ff5c2e;
+        }
+
+        .cta {
+            background: #ff5c2e;
+            color: #fff;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        .cta:hover {
+            transform: scale(1.06);
+        }
+
+        /* HERO */
+        .hero {
+            margin-top: 140px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            max-width: 600px;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero-text h1 {
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .hero-text h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ff5c2e;
+            margin-top: 10px;
+        }
+
+        .hero-text p {
+            font-size: 19px;
+            color: #ccc;
+            margin: 16px 0;
+            line-height: 1.5;
+        }
+
+        .gif-box img {
+            width: 540px; /* BIGGER GIF */
+            border-radius: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* BUTTON ROW */
+        .btn-row {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-outline {
+            border: 2px solid #fff;
+            background: transparent;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            0% {opacity: 0; transform: translateY(30px);}
+            100% {opacity: 1; transform: translateY(0);}
+        }
+
+        @keyframes float {
+            0% {transform: translateY(0);}
+            50% {transform: translateY(-10px);}
+            100% {transform: translateY(0);}
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 50px;
+            text-align: center;
+            margin-top: 80px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        @media (max-width: 780px) {
+            .hero {
+                text-align: center;
+                flex-direction: column;
+            }
+
+            .gif-box img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav">
+    <div class="logo"><img src = "C:\Users\Lenovo\Documents\logo.jpg" width="100px" height="100px"></div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html">Order</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <button class="cta" onclick="location.href='order.html'">Order Now</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-text">
+        <h1>Authentic Nepali Flavours, Delivered Fresh.</h1>
+
+        <!-- NEW ATTRACTIVE TEXT -->
+        <h3>🔥 Fresh • Fast • Traditional • Delicious 🔥</h3>
+
+        <p>
+            Experience the true taste of Nepal — handcrafted momos, rich curries, 
+            crispy snacks and warm homemade dishes made with love and tradition.
+            Nepali Khaja brings authentic Nepali street food and home-style meals
+            straight to your doorstep.
+        </p>
+
+        <p style="color:#ff5c2e;font-weight:600;font-size:20px;">
+            🚚 Fast Delivery • 🍲 Freshly Cooked • 💳 Secure Payments
+        </p>
+
+        <div class="btn-row">
+            <button class="cta" onclick="location.href='menu.html'">See Menu</button>
+            <button class="btn-outline" onclick="location.href='order.html'">Start Order</button>
+        </div>
+    </div>
+
+    <div class="gif-box">
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGNlZWl1Z3p1YmNsNzZ3bWkxaHdndmo1Z295OGZieWtqeml2cWk0aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VzkCRACE2PRdoJRx9c/giphy.gif" 
+             alt="Food delivery animation">
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 Nepali Khaja • All Rights Reserved • 
+</footer>
+
+</body>
+</html>

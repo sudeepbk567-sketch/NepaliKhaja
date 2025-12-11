@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepali Khaja – Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Full Screen Slider */
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        /* Center Text */
+        .slide-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .slide-content h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 80px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .slide-content p {
+            font-size: 20px;
+            font-weight: 300;
+            margin-bottom: 25px;
+        }
+
+        .quote {
+            font-size: 18px;
+            font-style: italic;
+            opacity: 0.9;
+            margin-top: 15px;
+        }
+
+        /* Navigation dots */
+        .dots {
+            position: absolute;
+            bottom: 30px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: rgba(255,255,255,0.6);
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            background-color: white;
+            transform: scale(1.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slider">
+
+        <!-- Slide 1 -->
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=1600&q=80');">
+            <div class="slide-content">
+                <h1>Nepali Khaja</h1>
+                <p>Where Every Bite Tells a Story</p>
+                <div class="quote">"Authentic Nepali flavors prepared with passion."</div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1541417904950-b855846fe074?auto=format&fit=crop&w=1600&q=80');">
+            <div class="slide-content">
+                <h1>Made With Love</h1>
+                <p>Freshly cooked dishes delivered to your door.</p>
+                <div class="quote">"Good food. Good mood. Nepali style."</div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1600&q=80');">
+            <div class="slide-content">
+                <h1>Our Specialties</h1>
+                <p>Momo • Thakali Set • Chowmein</p>
+                <div class="quote">"Taste the mountains in every bite."</div>
+            </div>
+        </div>
+
+        <!-- Slider Dots -->
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+    </div>
+
+    <script>
+        let slides = document.querySelectorAll(".slide");
+        let dots = document.querySelectorAll(".dot");
+        let current = 0;
+
+        function changeSlide(n) {
+            slides[current].classList.remove("active");
+            dots[current].classList.remove("active");
+            current = (n + slides.length) % slides.length;
+            slides[current].classList.add("active");
+            dots[current].classList.add("active");
+        }
+
+        // Auto slide every 5 seconds
+        setInterval(() => {
+            changeSlide(current + 1);
+        }, 5000);
+
+        // Dot click functionality
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                changeSlide(index);
+            });
+        });
+    </script>
+
+</body>
+</html>
